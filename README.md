@@ -27,7 +27,7 @@ model_load_dir="saved_models/WN18RR/model.ckpt"
 ## Citation
 If you use this code, please cite the paper
 ```
-@inproceedings{li2018path,
+@inproceedings{DBLP:conf/ijcai/WanP00H20,
   title={Reasoning Like Human: Hierarchical Reinforcement Learning for Knowledge Graph Reasoning},
   author={Guojia Wan and Shirui Pan and Chen Gong and Chuan Zhou and Gholamreza Haffari},
   booktitle={Proceedings of the Twenty-Ninth International Joint Conference on Artificial Intelligence, {IJCAI} 2020},
