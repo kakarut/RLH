@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 data_input_dir="datasets/data_preprocessed/FB15K-237/"
 vocab_dir="datasets/data_preprocessed/FB15K-237/vocab"
 max_policy_high=4
