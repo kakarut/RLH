@@ -16,3 +16,4 @@ base_output_dir="output/nell/worksfor"
 load_model=0
 model_load_dir="/home/sdhuliawala/logs/RL-Path-RNN/nnnn/45de_3_0.06_10_0.0/model/model.ckpt"
 nell_evaluation=0
+
