@@ -12,23 +12,18 @@ pip install -r requirements.txt
 ```
 
 ## Training
-The hyperparam configs for each experiments are in the **configs** directory. To start a particular experiment, just do
+
+You can get the hyperparam configs from the directory **configs**.
 ```
 sh run.sh configs/${dataset}.sh
 ```
-where the ${dataset}.sh is the name of the config file. For example, 
-```
-sh run.sh configs/WN18RR.sh
-```
+where the ${dataset}.sh is the name of the dateset file, e.g., WN18RR.sh
 
 ## Testing
 make
 ```
-load_model=1
 model_load_dir="saved_models/WN18RR/model.ckpt"
 ```
-
-
 ## Citation
 If you use this code, please cite the paper
 ```
