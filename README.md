@@ -1,8 +1,6 @@
 # RLH
 Code and models for the paper [Reasoning Like Human: Hierarchical Reinforcement Learning for Knowledge Graph Reasoning]
 
-We development the code based on the code of MINERVA [Go for a Walk and Arrive at the Answer - Reasoning over Paths in Knowledge Bases using Reinforcement Learning] (https://github.com/shehzaadzd/MINERVA)
-
 Inspired by the hierarchical reasoning principle of human cognitive decision-making, the model RLH based on hierarchical reinforcement
 learning is proposed to solve the multi-semantic problem of knowledge graph multi-hop reasoning process.
 
