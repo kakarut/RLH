@@ -8,7 +8,7 @@ import logging
 import numpy as np
 import tensorflow as tf
 from model.agent import Agent
-from model.env import env
+from model.graph_env import env
 import codecs
 from collections import defaultdict
 import gc
