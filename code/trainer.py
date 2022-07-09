@@ -7,13 +7,13 @@ import os
 import logging
 import numpy as np
 import tensorflow as tf
-from model.agent import Agent, AgentTarget
-from model.graph_env import env
+from code.agent import Agent, AgentTarget
+from code.graph_env import env
 import codecs
 import gc
 import resource
 import sys
-from model.eval import eval
+from code.eval import eval
 logger = logging.getLogger()
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
