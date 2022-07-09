@@ -6,7 +6,7 @@ learning is proposed to solve the multi-semantic problem of knowledge graph mult
 
 
 ## Requirements
-To install the various python 3.0
+To install the python 3.0
 ```
 pip install -r requirements.txt
 ```
