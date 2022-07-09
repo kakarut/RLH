@@ -65,15 +65,15 @@ class Agent(object):
 
     def high_policy_MLP(self, state):
         with tf.variable_scope("MLP_for_policy"):
-            hidden = tf.layers.dense(state, 4 * self.hidden_size, activation=tf.nn.relu)
+            hidden = tf.layers.dense(state, max_policy_high * self.hidden_size, activation=tf.nn.relu)
             output = tf.layers.dense(hidden, self.m * self.embedding_size, activation=tf.nn.relu)
-        return low_output
+        return high_output
       
     def low_policy_MLP(self, state):
         with tf.variable_scope("MLP_for_policy"):
-            hidden = tf.layers.dense(state, 4 * self.hidden_size, activation=tf.nn.relu)
+            hidden = tf.layers.dense(state, max_policy_low * self.hidden_size, activation=tf.nn.relu)
             output = tf.layers.dense(hidden, self.m * self.embedding_size, activation=tf.nn.relu)
-        return hi_output
+        return low_output
     def action_encoder(self, next_relations, next_entities):
         with tf.variable_scope("lookup_table_edge_encoder"):
             relation_embedding = tf.nn.embedding_lookup(self.relation_lookup_table, next_relations)
@@ -102,8 +102,11 @@ class Agent(object):
 
         # MLP for policy#
 
-        output = self.policy_MLP(state_query_concat)
-        output_expanded = tf.expand_dims(output, axis=1)  # [B, 1, 2D]
+        high_output = self.high_policy_MLP(state_query_concat)
+low_output = self.low_policy_MLP(state_query_concat)
+        output_high_expanded = tf.expand_dims(high_output, axis=1)  # [B, 1, 2D]
+		output_low_expanded = tf.expand_dims(low_output, axis=1)  # [B, 1, 2D]
+		output_expanded = tf.reduce_sum(tf.multiply(output_high_expanded, output_low_expanded))
         prelim_scores = tf.reduce_sum(tf.multiply(candidate_action_embeddings, output_expanded), axis=2)
 
         # Masking PAD actions
