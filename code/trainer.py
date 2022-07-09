@@ -7,23 +7,13 @@ import os
 import logging
 import numpy as np
 import tensorflow as tf
-
-# Export PYTHONPATH so that 'rl_code' folder can be regarded as a package
-import sys
-sys.path.append('/data/base2/Bio-Relation-Extract/BioRE-master/rl+PCNN/Joint')
-
-from rl_code.model.agent import Agent, AgentTarget
-from rl_code.options import read_options
-from rl_code.model.environment import env
+from model.agent import Agent, AgentTarget
+from model.graph_env import env
 import codecs
-from collections import defaultdict
 import gc
 import resource
 import sys
-from rl_code.model.baseline import ReactiveBaseline
-from rl_code.model.nell_eval import nell_eval
-from scipy.misc import logsumexp as lse
-
+from model.eval import eval
 logger = logging.getLogger()
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
@@ -1857,9 +1847,9 @@ class Trainer(object):
         logger.info("Hits@1: {0:7.4f}".format(all_final_reward_1))
         logger.info("Hits@5: {0:7.4f}".format(all_final_reward_5))
         logger.info("Hits@10: {0:7.4f}".format(all_final_reward_10))
-        logger.info("Hits@50: {0:7.4f}".format(all_final_reward_50))
-        logger.info("Hits@100: {0:7.4f}".format(all_final_reward_100))
-        logger.info("auc: {0:7.4f}".format(auc))
+        #logger.info("Hits@50: {0:7.4f}".format(all_final_reward_50))
+       # logger.info("Hits@100: {0:7.4f}".format(all_final_reward_100))
+        #logger.info("auc: {0:7.4f}".format(auc))
 
         del paths
 
